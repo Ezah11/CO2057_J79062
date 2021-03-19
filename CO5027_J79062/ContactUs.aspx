@@ -1,24 +1,73 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ContactUs.aspx.cs" Inherits="ContactUs" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ContactUs.aspx.cs" Inherits="CO5027_J79062.ContactUs" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 <h2>Contact Us</h2>
-<p>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ante quam, consectetur id congue sed, dictum non risus. Ut luctus porttitor magna, eu consequat ipsum venenatis dictum. Morbi scelerisque pellentesque augue, eget cursus orci hendrerit at. Nunc vehicula nisi in enim sagittis faucibus. Praesent gravida pulvinar risus ac auctor. Aliquam vitae tristique sapien. Pellentesque sed odio et tellus ullamcorper vestibulum ac hendrerit nibh.
-</p><p>
-Phasellus viverra cursus gravida. Nulla nec arcu et est auctor ultricies vel in mauris. Aenean porta adipiscing libero sit amet ultrices. Donec at arcu at odio semper tempor. Etiam luctus turpis pharetra justo venenatis dignissim. Vestibulum vehicula nibh eu justo mattis posuere. Integer et lacus sem, id aliquam turpis. Curabitur viverra congue laoreet. Suspendisse sed tortor quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris ultricies lorem vel nulla dapibus sollicitudin aliquam sit amet dolor. Aenean id interdum turpis. Fusce hendrerit sodales risus sed viverra. Integer et metus non elit sollicitudin vehicula sit amet eget odio. Suspendisse vitae velit at ante aliquet placerat. In aliquet vulputate interdum.
-</p><p>
-Pellentesque non ornare lectus. Fusce mattis bibendum consectetur. Etiam dui nunc, feugiat at luctus in, tincidunt vel purus. Morbi sed dolor non metus rhoncus facilisis. Duis ut ante et dolor adipiscing pharetra. Suspendisse dapibus accumsan ipsum, nec rhoncus eros imperdiet ac. Nam tempor erat id tortor elementum id eleifend nulla commodo. Quisque ipsum nisi, laoreet ac euismod nec, laoreet id urna. Nullam luctus ligula vel nunc accumsan lacinia.
-</p><p>
-Nunc laoreet viverra diam, at consectetur ante rhoncus at. Mauris pellentesque tincidunt sapien at placerat. Duis in magna augue. Nullam est lorem, vehicula in tempor in, mattis dapibus purus. Morbi est est, accumsan et imperdiet vel, bibendum ac lectus. Sed consectetur nisi eget augue eleifend in rutrum est eleifend. Sed quis mauris nunc. Nullam pulvinar, purus ut sollicitudin porttitor, ipsum massa malesuada orci, volutpat commodo metus nulla id turpis. Vivamus sed risus ligula, ut fringilla ante.
-</p><p>
-Sed eget nisi ipsum, a feugiat ante. Mauris a quam erat, ac rhoncus mauris. Nunc laoreet blandit scelerisque. Morbi porttitor porttitor orci in eleifend. Donec consequat hendrerit sem vitae fringilla. Nam vel ipsum quis est luctus vehicula. Maecenas neque augue, adipiscing vel pretium eu, dapibus id odio. Vestibulum libero ligula, lobortis vel scelerisque ut, scelerisque sit amet nisl. Ut quis placerat sapien. Mauris fringilla ornare laoreet. Etiam molestie tincidunt ante, non commodo leo rutrum eu. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in purus ac nunc tristique laoreet. Curabitur ultricies convallis velit, vitae ornare ipsum gravida nec. Aliquam ut dictum massa. </p>
+<asp:panel runat="server" ID="pnlCompose">
+        <asp:validationsummary runat="server" CssClass="errorMessages">
+        </asp:validationsummary>
+        <div>
+            <asp:label id="lblEmail" runat="server" text="Email Address" associatedcontrolid="txtEmail">
+            </asp:label>
+            <asp:textbox id="txtEmail" runat="server">
+            </asp:textbox>
+            <asp:RequiredFieldValidator ID="rfvEmail" runat="server" 
+                ErrorMessage="Please enter your email address" 
+                ControlToValidate="txtEmail" CssClass="error">*</asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="revEmail" runat="server" 
+                ErrorMessage="Please check you entered your email address correctly" 
+                ControlToValidate="txtEmail" CssClass="error">*</asp:RegularExpressionValidator>
+        </div>
+        <div>
+            <asp:label id="lblConfirmEmail" runat="server" text="Confirm Email" associatedcontrolid="txtConfirmEmail">
+            </asp:label>
+            <asp:textbox id="txtConfirmEmail" runat="server">
+            </asp:textbox>
+            <asp:CompareValidator ID="CompareValidator1" runat="server" 
+                ErrorMessage="Please check your confirmed email address" 
+                ControlToCompare="txtConfirmEmail" ControlToValidate="txtEmail" CssClass="error">*</asp:CompareValidator>
+        </div>
+        <div>
+            <asp:label id="lblSubject" runat="server" text="Subject" associatedcontrolid="txtSubject">
+            </asp:label>
+            <asp:textbox id="txtSubject" runat="server">
+            </asp:textbox>
+            <asp:RequiredFieldValidator ID="rfvSubject" runat="server" 
+                ErrorMessage="Please type a subject for the message" 
+                ControlToValidate="txtSubject" CssClass="error">*</asp:RequiredFieldValidator>
+        </div>
+        <div>
+            <asp:label id="lblBody" runat="server" text="Your Message" associatedcontrolid="txtBody">
+            </asp:label>
+            <asp:textbox id="txtBody" runat="server" textmode="MultiLine">
+            </asp:textbox>
+            <asp:RequiredFieldValidator ID="rfvMessage" runat="server" 
+                ErrorMessage="Please type your message" ControlToValidate="txtBody" CssClass="error">*</asp:RequiredFieldValidator>
+        </div>
 
-</p>
+        <div>
+            <asp:button id="btnContact" runat="server" text="Send"/>
+        </div>
+    </asp:panel>
 
-</div>
-</div>
+
+    <asp:Panel ID="pnlSent" runat="server" visible="false">
+    <p>Your message has been sent</p>
+    </asp:Panel>
+
+    <div id="map"></div>
+        <h2>Our Location</h2>
+        <div id="myMap" style='width: 40vw; height: 35vh;'></div>
+        <script type='text/javascript'>
+            function loadMapScenario() {
+                var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {});
+                
+            }
+        </script>
+        <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=YourBingMapsKey&callback=loadMapScenario' async defer></script>
+
+
 </asp:Content>
+
 
