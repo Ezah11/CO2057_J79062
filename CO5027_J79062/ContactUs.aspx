@@ -47,7 +47,7 @@
         </div>
 
         <div>
-            <asp:button id="btnContact" runat="server" text="Send"/>
+            <asp:button id="btnContact" runat="server" text="Send" onclick="btnSendSecure_Click"/>
         </div>
     </asp:panel>
 
