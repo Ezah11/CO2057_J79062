@@ -8,8 +8,17 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-        </div>
+        <asp:Label ID="Username" runat="server" Text="Username"></asp:Label>
+        <asp:TextBox ID="txtRegEmail" runat="server"></asp:TextBox>
+        <br />
+            <asp:Label ID="Password" runat="server" Text="Password"></asp:Label>
+            <asp:TextBox ID="txtRegPassword" runat="server" TextMode="Password"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Button ID="Button1" runat="server" Text="Register" />
+            <br />
+        <br />
+        <asp:Literal ID="litRegisterError" runat="server"></asp:Literal>
     </form>
 </body>
 </html>

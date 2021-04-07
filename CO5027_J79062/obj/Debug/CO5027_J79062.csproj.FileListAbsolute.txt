@@ -57,3 +57,11 @@ C:\Users\User\source\repos\CO5027_J79062\CO5027_J79062\obj\Debug\CO5027_J79062.c
 C:\Users\User\source\repos\CO5027_J79062\CO5027_J79062\obj\Debug\CO5027_J79062.csproj.CopyComplete
 C:\Users\User\source\repos\CO5027_J79062\CO5027_J79062\obj\Debug\CO5027_J79062.dll
 C:\Users\User\source\repos\CO5027_J79062\CO5027_J79062\obj\Debug\CO5027_J79062.pdb
+C:\Users\User\source\repos\CO5027_J79062\CO5027_J79062\bin\EntityFramework.dll
+C:\Users\User\source\repos\CO5027_J79062\CO5027_J79062\bin\EntityFramework.SqlServer.dll
+C:\Users\User\source\repos\CO5027_J79062\CO5027_J79062\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\User\source\repos\CO5027_J79062\CO5027_J79062\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\User\source\repos\CO5027_J79062\CO5027_J79062\bin\EntityFramework.xml
+C:\Users\User\source\repos\CO5027_J79062\CO5027_J79062\bin\EntityFramework.SqlServer.xml
+C:\Users\User\source\repos\CO5027_J79062\CO5027_J79062\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\User\source\repos\CO5027_J79062\CO5027_J79062\bin\Microsoft.AspNet.Identity.EntityFramework.xml
