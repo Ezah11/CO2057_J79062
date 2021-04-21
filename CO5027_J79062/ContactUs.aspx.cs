@@ -10,39 +10,37 @@ namespace CO5027_J79062
 {
     public partial class ContactUs : System.Web.UI.Page
     {
-        private object litResult;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
         }
 
         [Obsolete]
-        protected void btnSendSecure_Click(object sender, EventArgs e)
+        protected void btnContact_Click(object sender, EventArgs e)
         {
-            /*try
+            SmtpClient smtpClient = new SmtpClient();
+            MailMessage msg = new MailMessage("khadizahyusop2484@gmail.com", "khadizahyusop2484@gmail.com");
+            msg.Subject = txtSubject.Text;
+            msg.Body = txtBody.Text;
+
+            smtpClient.Host = "smtp.gmail.com";
+            smtpClient.Port = 587;
+            smtpClient.EnableSsl = true;
+
+            System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("khadizahyusop2484@gmail.com", "Rf2BZ2ggTGkX786");
+            smtpClient.Credentials = credentials;
+            msg = new MailMessage("khadizahyusop2484@gmail.com", "khadizahyusop2484@gmail.com");
+
+            try
             {
-                MailMessage mail = new MailMessage();
-                mail.To.Add("khadizahyusop2484@gmail.com");
-                mail.From = new MailAddress("khadizahyusop2484@gmail.com");
-                mail.Subject = txtSubject.Text;
-                mail.Body = txtBody.Text;
-                SmtpClient smtp = new SmtpClient();
-                smtp.Host = "smtp.gmail.com";
-                smtp.Port = 587;
-                smtp.UseDefaultCredentials = false;
-                System.Net.NetworkCredential credentials = new System.Net.NetworkCredential("khadizahyusop2484@gmail.com", "Rf2BZ2ggTGkX786");
-                smtp.Credentials = credentials;
-                smtp.EnableSsl = true;
-
-                smtp.Send(mail);
-                litResult.Text = "Mail Send!";
+                smtpClient.Send(msg);
+                litResult.Text = "<p>Success, mail sent using SMTP with secure connection and credentials</p>";
             }
-
             catch (Exception ex)
             {
-                litResult.Text = "Send Failed!";
-            }*/
+                litResult.Text = "<p>Send failed:" + ex.Message + ":" + ex.InnerException + "</p>";
+            }
+
         }
     }
 

@@ -132,15 +132,6 @@ namespace CO5027_J79062
         protected global::System.Web.UI.WebControls.TextBox txtBody;
 
         /// <summary>
-        /// rfvMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMessage;
-
-        /// <summary>
         /// btnContact control.
         /// </summary>
         /// <remarks>
@@ -150,12 +141,12 @@ namespace CO5027_J79062
         protected global::System.Web.UI.WebControls.Button btnContact;
 
         /// <summary>
-        /// pnlSent control.
+        /// litResult control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlSent;
+        protected global::System.Web.UI.WebControls.Literal litResult;
     }
 }
